@@ -59,3 +59,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void progress(int amount) {
+        int dabartinis = progressBar.getProgress();
+        int naujas = dabartinis + amount;
+        if (naujas >= 100) {
+            naujas = 100;
+            Toast.makeText(this, "Pasiektas 100%", Toast.LENGTH_SHORT).show();
+        }
+        progressBar.setProgress(naujas);
+    }
+}
